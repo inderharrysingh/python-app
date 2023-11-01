@@ -1,6 +1,6 @@
 version: 0.2
 
- env:
+env:
   parameter-store:
     username: /myapp/docker-credentials/username
     password: /myapp/docker-credentials/password
