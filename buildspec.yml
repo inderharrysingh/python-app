@@ -17,11 +17,9 @@ phases:
     commands:
       - echo "Running tests..."
       - echo "Building Docker image..."
-      - echo "$username"
-      - echo "$password"
-      - echo "$password" | docker login -u "$username" --password-stdin "$url"
-      - docker build -t "$url/$urername/python:latest" .
-      - docker push  "$url/$urername/python:latest" 
+      - docker login -u "$username" -p "$password"
+      - docker build -t "$username/python-app-awesome:latest" .
+      - docker push  "$username/python-app-awesome:latest"
   post_build:
     commands:
       - echo "Build completed successfully!"
